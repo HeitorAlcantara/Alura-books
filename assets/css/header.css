@@ -1,0 +1,158 @@
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.cabecalho__menu--dropdown {
+    /* Ao mexer com background-image, sempre definir uma largura, altura e display do elemento. */
+    width: 36px;
+    height: 24px;
+    display: inline-block;
+    background-image: url(../img/Menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__img {
+    padding: 1em;
+}
+
+.lista__menu {
+    display: none;
+}
+
+.container__button {
+    display: none;
+}
+
+.container__button:checked~.lista__menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    background-color: var(--branco);
+    padding: 8px;
+    width: 66%;
+    z-index: 99999;
+}
+
+.lista__menu--item,
+.lista__menu--title {
+    padding: 1em;
+}
+
+.lista__menu--title {
+    color: var(--alaranjado);
+    font-weight: 700;
+}
+
+.lista__menu--link {
+    text-transform: uppercase;
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menuAberto{
+    display: none;
+}
+
+
+/* ************* LAYOUT 1024 ************* */
+
+.cabecalho__title--desktop{
+    display: none;
+}
+
+.cabecalho__list--desktop{
+    display: none;
+}
+
+.cabecalho__item--desktop{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .cabecalho__menu--dropdown{
+        display: none;
+    }
+
+    .cabecalho__container--desktop > a:first-child{
+        display: none;
+    }
+
+    .container{
+        display: flex;
+    }
+
+    .logo{
+        margin-left: 3em;
+    }
+
+    .cabecalho__title--desktop, .strong{
+        display: initial;
+        font: var(--fonte-secundaria);
+        font-size: 30px;
+        font-weight: 300;
+    }
+    
+    .strong{
+        font-weight: 700;
+    }
+    
+    .cabecalho__list--desktop{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cabecalho__item--desktop{
+        display: initial;
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .cabecalho__container--desktop{
+        padding: 0 3em;
+    }
+
+    .container__img--desktop{
+        padding: 0 2em;
+    }
+
+    .cabecalho__item--desktop:checked~.lista__desktop {
+        width: auto;
+    }
+}
+/* ************* FIM DO LAYOUT 1024 ************* */
+
+.container__text{
+    display: none;
+}
+
+@media screen and (min-width: 1728px) {
+    .cabecalho{
+        padding: 0 2em;
+    }
+    
+    .container__text{
+        display: initial;
+    }
+
+    .container__link{
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .cabecalho__list--desktop{
+        margin-right: auto;
+    }
+}
